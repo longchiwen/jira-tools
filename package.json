@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "dotenv-flow": "^3.1.0",
+    "jira-connector": "^3.1.0"
+  },
+  "name": "jira-tools",
+  "description": "Tools for working with Jira",
+  "version": "0.1.0",
+  "main": "index.mjs",
+  "scripts": {
+    "bulk-close": "node index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/longchiwen/jira-tools.git"
+  },
+  "keywords": [
+    "jira",
+    "tools"
+  ],
+  "author": "longchiwen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/longchiwen/jira-tools/issues"
+  },
+  "homepage": "https://github.com/longchiwen/jira-tools#readme"
+}
