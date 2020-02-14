@@ -1,2 +1,4 @@
 .env.local
+.vscode
+.secrets
 node_modules

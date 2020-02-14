@@ -3,17 +3,21 @@
 ## Prerequisites
 - node v12+
 
-## Setup
+## Using CLI
+
+### Help
+```
+cli.mjs --help
+```
+
+### Bulk close issues
+```
+cli.mjs bulk-close <config>
+```
+
+## Development
 
 ### Install it
 ```
 yarn
 ```
-
-## Run actions
-
-### Bulk close issues
-```
-yarn run bulk-close
-```
-

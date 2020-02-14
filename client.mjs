@@ -1,11 +1,7 @@
 import JiraClient from "jira-connector";
-import BulkClose from "./bulk-close.mjs";
-import dotenv from 'dotenv-flow'
-
-dotenv.config()
 
 // Initialize Jira client
-var client = new JiraClient({
+const client = new JiraClient({
   host: process.env.JIRA_HOST,
   basic_auth: {
     email: process.env.AUTH_EMAIL,
@@ -13,5 +9,6 @@ var client = new JiraClient({
   }
 });
 
-let action = new BulkClose(client)
-action.run()
+
+export default client
+
