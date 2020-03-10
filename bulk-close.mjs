@@ -45,7 +45,7 @@ export default class BulkClose {
     return arrOrStr
   }
 
-  async buildIssueUpdate(options) {
+  buildIssueUpdate(options) {
     let issueUpdate = options.issueUpdate||{}
 
     if (typeof options.closeComment !== "undefined") {
@@ -95,10 +95,9 @@ export default class BulkClose {
       this.log(
         `Transitioning ${o.id} to ${transition.name} (${transition.id})`
       );
-      //await this.closeIssue(o.id, transition.id,opt);
+      await this.closeIssue(o.id, transition.id,opt);
     };
 
-    
     this.log("");
 
     return list;
@@ -133,12 +132,13 @@ export default class BulkClose {
   }
 
   async closeIssue(issueKey, transitionId,issueUpdate) {
-    let transition = { id: transitionId };
-    
+    const transition = { id: transitionId };
+    const update = this.buildIssueUpdate(issueUpdate)
+
     await this.client.issue.editIssue({
       issueKey: issueKey,
       issue: {
-        update: issueUpdate
+        update: update
       }
     });
     await this.client.issue.transitionIssue({
